@@ -7,13 +7,18 @@ import java.util.stream.Collectors;
 class Ladder {
     private final List<Line> lines;
 
+    public Ladder(List<Line> lines) {
+        this.lines = lines;
+    }
+
     public Ladder(int height, int countOfParticipants) {
-        this.lines = IntStream.range(0, height)
+        this(IntStream.range(0, height)
                 .mapToObj(i -> new Line(countOfParticipants))
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()));
     }
 
     public List<Line> getLines() {
         return lines;
     }
+
 }

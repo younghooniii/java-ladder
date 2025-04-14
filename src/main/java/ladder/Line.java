@@ -19,6 +19,14 @@ class Line {
         }
     }
 
+    public Line(List<Boolean> points) {
+        this.points = points;
+    }
+
+    public List<Boolean> getPoints() {
+        return points;
+    }
+
     public String draw() {
         StringBuilder sb = new StringBuilder();
         for (Boolean point : points) {
